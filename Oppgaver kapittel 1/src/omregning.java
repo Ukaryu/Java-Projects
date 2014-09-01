@@ -14,16 +14,35 @@ public class omregning {
         int sekunder;
         int timer;
         int minutter;
+        int uker;
+        int måneder;
+        int år;
         Scanner tastatur = new Scanner(System.in);
 
-        System.out.print("Skriv inn sekunder som skal omregnes: ");
-        sekunder = tastatur.nextInt();
 
-        timer = (sekunder / 3600);
-        minutter = ((sekunder / 60) % 60);
-        sekunder = ((sekunder % 3600) % 60);
 
-        System.out.println("Omregningen gir at det er " + timer + " timer" + ", " + minutter + " minutter" + " og " + sekunder + " sekunder.");
+       do {
+           System.out.print("Skriv inn sekunder som skal omregnes: ");
+           sekunder = tastatur.nextInt();
+
+           år = (sekunder / 31536000);
+           måneder =((sekunder % 31536000) / 2628000);  // For å sjekke om koden fungerer bruk 34772460 som referanseverdi, skal oppgi 1 av alt
+           uker = (((sekunder % 31536000 ) % 2628000 ) / 604800);
+           timer = ((((sekunder % 31536000 ) % 2628000) % 604800 ) / 3600);
+           minutter = (((((sekunder % 31536000 ) % 2628000) % 604800 ) % 3600) / 60);
+           sekunder = (((((sekunder % 31536000 ) % 2628000) % 604800 ) % 3600) % 60);
+
+           if (sekunder != 0) {
+               System.out.println("Omregningen gir at det er " + år + " år, " + måneder + " måneder, " + uker + " uker, " + timer + " timer, " + ", " + minutter + " minutter" + " og " + sekunder + " sekunder.");
+               System.out.println();
+           } else {
+               System.out.println("Sekundene du har oppgitt har nullverdi.");
+               System.out.println();
+               System.out.println("Avslutter...");
+           }
+
+
+       } while (sekunder != 0);
     }
 
 }
