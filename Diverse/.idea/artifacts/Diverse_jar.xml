@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Diverse:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Diverse_jar</output-path>
+    <root id="archive" name="Diverse.jar">
+      <element id="module-output" name="Diverse" />
+    </root>
+  </artifact>
+</component>

@@ -17,6 +17,7 @@ public class omregning {
         int uker;
         int måneder;
         int år;
+        int dager;
         Scanner tastatur = new Scanner(System.in);
 
 
@@ -28,12 +29,15 @@ public class omregning {
            år = (sekunder / 31536000);
            måneder =((sekunder % 31536000) / 2628000);  // For å sjekke om koden fungerer bruk 34772460 som referanseverdi, skal oppgi 1 av alt
            uker = (((sekunder % 31536000 ) % 2628000 ) / 604800);
-           timer = ((((sekunder % 31536000 ) % 2628000) % 604800 ) / 3600);
+           dager = ((((sekunder % 31536000 ) % 2628000 ) % 604800) / 84600);
+           timer = (((((sekunder % 31536000 ) % 2628000 ) % 604800) % 84600) / 3600);
            minutter = (((((sekunder % 31536000 ) % 2628000) % 604800 ) % 3600) / 60);
            sekunder = (((((sekunder % 31536000 ) % 2628000) % 604800 ) % 3600) % 60);
 
            if (sekunder != 0) {
-               System.out.println("Omregningen gir at det er " + år + " år, " + måneder + " måneder, " + uker + " uker, " + timer + " timer, " + ", " + minutter + " minutter" + " og " + sekunder + " sekunder.");
+               System.out.println("Omregningen gir at det er " + år + " år, " + måneder + " måneder, " + uker + " uker, "
+                       + dager + " dager, " + timer + " timer, " + minutter + " minutter" + " og " + sekunder + " sekunder.");
+
                System.out.println();
            } else {
                System.out.println("Sekundene du har oppgitt har nullverdi.");
