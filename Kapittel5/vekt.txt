@@ -1,0 +1,29 @@
+Jens 52
+Marit 43
+Olav 50
+Johann 60
+Kristian 65
+Markus 51
+Silje 40
+Kristianne 39
+Marianne 41
+Magnus 59
+Jon 63
+Kai-Roger 61
+Hans 64
+Viola 43
+Karin 42
+Martin 58
+Synnøve 46
+Inga 41
+Haakon 50
+Roger 69
+Idar 57
+Lisa 30
+Jean 56
+Åge 54
+Sylvia 45
+Jørgen 49
+Alex 71
+
+
