@@ -8,7 +8,7 @@ public class palindrom {
         Out skjerm = new Out();
         In tast = new In();
 
-        skjerm.outln("Skriv inn ordet som skal vurderes: ")
+        skjerm.outln("Skriv inn ordet som skal vurderes: ");
         String pal = tast.inLine();
         int v = 0;
         int h = pal.length() - 1;

@@ -31,6 +31,7 @@ public class oppgave5 {
                 maks = temp [i];
             }
         }
+
         skjerm.outln();
         skjerm.outln("Høyeste temperatur i denne perioden var på " + maks + " grader.");
         skjerm.outln();

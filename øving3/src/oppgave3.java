@@ -10,20 +10,28 @@ public class oppgave3 {
         In tast = new In();
 
         double x;
-        double n;
+        int n;
         double i;
 
 
         skjerm.outln("Vennligst skriv inn tallet som skal regnes ut og potensen som skal brukes respektivt: ");
         x = tast.inDouble();
-        n = tast.inDouble();
+        n = tast.inInt();
 
         double svar = Math.pow(x, n);
 
-        double sum = 1;
-        while (n > 0){
-            sum *= x;
-            n--;
+        double produkt = 1;
+
+        while (n > 0 || n < 0){
+
+            if(n > 0){
+                produkt *= x;
+                n--;
+            } else{
+                produkt /= x;
+                n++;
+            }
+
         }
 
         skjerm.outln();
@@ -31,7 +39,7 @@ public class oppgave3 {
         skjerm.outln(svar, 2);
         skjerm.outln();
         skjerm.out("Resultatet av potensregningen ved bruk av en while-løkke blir: ");
-        skjerm.outln(sum, 2);
+        skjerm.outln(produkt, 2);
         skjerm.outln();
         skjerm.out("Det kan være forskjellige svar pga. simplisiteten til while-løkken.");
 
