@@ -2,7 +2,7 @@ import easyIO.*;
 /**
  * Created by Martin on 12.09.2014.
  */
-public class palindrom {
+public class oppgave4 {
 
     public static void main(String[] args) {
         Out skjerm = new Out();

@@ -4,7 +4,7 @@ import java.awt.event.*;
 /**
  * Created by Martin on 07.09.2014.
  */
-class lytter extends KeyAdapter {
+class lytter extends KeyAdapter {               //I denne klassen så blir informasjon oppgitt av bruker utregnet
     int år;
     int måneder;
     int uker;
