@@ -7,22 +7,36 @@ import easyIO.*;
 public class oppgave4 {
     public static void main(String[] args) {
         Out skjerm = new Out();
-        rektangel r = new rektangel(); //Kaller på rektangel-klassen
+        In tast = new In();
 
-        skjerm.outln("Skriv inn bredde og høyde respektivt: ");
+        skjerm.outln("Skriv inn bredde: ");
+        int bredde = tast.inInt();
+        skjerm.outln();
+        skjerm.outln("Skriv inn høyde: ");
+        int høyde = tast.inInt();
+        skjerm.outln();
+        skjerm.outln("Skriv inn tegn for rektangel: ");
+        String tegn = tast.inLine();
+        skjerm.outln();
 
-        r.rekt();
+        rektangel r2 = new rektangel(bredde, høyde, tegn);
+        r2.rekt();
 
     }
-
 }
-
 class rektangel{
     Out skjerm = new Out();
     In tast = new In();
 
-    int bredde = tast.inInt();
-    int høyde = tast.inInt();
+    int bredde;
+    int høyde;
+    String tegn;
+
+    public rektangel(int bredde, int høyde, String tegn){
+        this.bredde = bredde;
+        this.høyde = høyde;
+        this.tegn = tegn;
+    }
 
     int areal(){
         int a = bredde * høyde;
@@ -35,19 +49,21 @@ class rektangel{
     }      //Regner ut omkretsen av rektangelet
 
     String ram(){
+
         String ramme = "";
         for (int i = 0; i < bredde; i++){
-            ramme += " * ";
+            ramme += " " + tegn + " ";
         }
 
         String firkant = "";
         for (int j = 0; j < høyde; j++){
             firkant += (ramme + "\n");
         }
+
         return firkant;
     }       //Bygger rektangelet
 
-    void rekt(){            //Skriver ut informasjon om rektangelet
+    public void rekt(){            //Skriver ut informasjon om rektangelet
 
         skjerm.outln("Arealet av rektangelet blir " + areal());
         skjerm.outln();
