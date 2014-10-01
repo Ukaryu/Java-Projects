@@ -19,11 +19,9 @@ public class oppgave1 {
         String tegn = tast.inLine();
         skjerm.outln();
 
-        rektangel r = new rektangel();
-        r.setAreal(bredde, høyde);
-        r.setOmkrets(bredde, høyde);
-        r.setRam(tegn, bredde, høyde);
+        rektangel r = new rektangel(bredde, høyde, tegn);
         r.rekt();
+        skjerm.outln(r.getRam());
 
     }
 }
@@ -33,39 +31,43 @@ class rektangel{
     In tast = new In();
 
     private int omkrets;
-    private int areal;
+    static int areal;
     private String firkant;
+    int bredde;
+    int høyde;
+    String tegn;
 
-    public void setAreal(int b, int h){
-        areal = b * h;
-    }                //Regner ut arealet av rektangelet
+    rektangel(int bredde, int høyde, String tegn){
+        this.bredde = bredde;
+        this.høyde = høyde;
+        this.tegn = tegn;
+
+        areal = bredde * høyde;                 //Regner ut arealet av rektangelet
+
+        omkrets = bredde * 2 + høyde * 2;       //Regner ut omkretsen av rektangelet
+
+        String ramme = "";
+        for (int i = 0; i < bredde; i++){
+            ramme += " " + tegn + " ";
+        }
+
+        firkant = "";
+        for (int j = 0; j < høyde; j++){        //Bygger rektangelet
+            firkant += (ramme + "\n");
+        }
+
+    }
+
 
     private int getAreal(){
         return areal;
     }
 
-    public void setOmkrets(int b, int h){
-        omkrets = b * 2 + h * 2;
-    }       //Regner ut omkretsen av rektangelet
-
     private int getOmkrets() {
         return omkrets;
     }
 
-    public void setRam(String t, int b, int h){
-
-        String ramme = "";
-        for (int i = 0; i < b; i++){
-            ramme += " " + t + " ";
-        }
-
-        firkant = "";
-        for (int j = 0; j < h; j++){
-            firkant += (ramme + "\n");
-        }
-    }                                         //Bygger rektangelet
-
-    private String getRam() {
+    public String getRam() {
         return firkant;
     }
 

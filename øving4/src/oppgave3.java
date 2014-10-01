@@ -41,12 +41,12 @@ class Sortert{
     Sortert(){
         Out skjerm = new Out();
 
-        int heltall [] = {3,5,6,7,8,100};
+        int heltall [] = {1,1,1,1,1,100};
         boolean sort = true;
 
         for (int i = 0; i < heltall.length - 1 && sort; i++){
 
-            if (heltall[i] < heltall[i + 1]){
+            if (heltall[i] <= heltall[i + 1]){
                 sort = true;
             } else{
                 sort = false;
