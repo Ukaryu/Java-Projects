@@ -37,6 +37,7 @@ class rektangel{
     int høyde;
     String tegn;
 
+
     rektangel(int bredde, int høyde, String tegn){
         this.bredde = bredde;
         this.høyde = høyde;
