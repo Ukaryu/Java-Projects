@@ -38,15 +38,15 @@ class vare{
         this.pris = pris;
     }
 
-    private int getVareNr(){
+    public int getVareNr(){
         return vareNr;
     }
 
-    private String getNavn(){
+    public String getNavn(){
         return navn;
     }
 
-    private double getPris(){
+    public double getPris(){
         return pris;
     }
 

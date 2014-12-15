@@ -1,0 +1,200 @@
+Oppgave 1
+a)
+	Utskrift : 
+	-1
+
+b)
+	Utskrift:
+	7 != 5 = true
+
+c)
+	Utskrift:
+	DAT101
+
+d)
+	Utskrift:
+	DAT100
+	
+e)
+	Utskrift:
+	11111
+
+
+Oppgave 2
+a)
+	Det er 5 klasser; Person, Betalingskort, Bank, Kreditkort og KontantKort. Disse har hver en objektvariabel. Person har en String-variabel navn, 
+	Betalingskort har en int-variabel nummer, Bank har en String-variabel navn lik variabelen i Person. Videre så har Kreditkort en int-variabel grense
+	og Kontantkort en int-variabel saldo. Når en eller opptil 10 Person (String-variabel navn) bruker et Betalingskort (int-variabel nummer), så henter Betalingskort klassene
+	Kreditkort og Kontantkort. Alt dette går videre til Bank klassen som registrerer navn. 
+
+b)
+	Klassen Betalingskort er ikke skrevet opp som vil gi en stor forskjell i forhold til klassediagrammet fra a). 
+
+Oppgave 3
+a)
+	boolean erLedig(int r, int s){
+		
+		if(seter[int s][int r] == true){
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+b)
+	int AntallLedige(){
+
+		int teller = 0;
+
+		for(int i = 0; i < seter.length; i++){
+
+			for(int j = 0; i < seter[].length; i++){
+
+				if(seter[i][j] == true){
+
+					teller += 1;
+				}
+			}
+		}
+		
+		return teller;
+	}
+
+c)
+
+	void finnLedig(){
+		
+		for(int i = 0; i < seter.length; i++){
+
+			for(int j = 0; i < seter[].length; i++){
+
+				if(seter[i][j] == true){
+
+					System.out.println("Det er ledig sete på rad " + i + ", sete " + j;
+				}
+			}
+		}
+	}
+
+Oppgave 4
+a)
+	class BrukerKonti{
+		
+		HashMap<String, String> konti;
+
+		BrukerKonti(){
+			
+			new Hashmap();
+
+		}
+		
+		void registrerBruker(String brukernavn, String passord){
+
+			konti.add(brukernavn, passord);
+		}
+
+		boolean sjekkPassord(String brukernavn, String passord){
+			
+			if(konti.containsKey(brukernavn)){
+			
+				if(konti.get(brukernavn).equals(passord)){
+					
+					return true;
+
+				} else {
+					
+					return false;
+				}
+
+			} else {
+
+				return false;			
+			}
+		}
+	}
+
+Oppgave 5
+a)
+
+	class Rom{
+
+		int nummer;
+		String navn;
+		
+		Rom(int nummer, String navn){
+		
+			this.nummer = nummer;
+			this.navn = navn;
+		}
+
+		int getNummer(){
+
+			return nummer;
+		}
+
+		String getNavn(){
+
+			return navn;
+		}
+
+		void skrivUt(){
+			
+			System.out.println(getNummer());
+			System.out.println(getNavn());
+		}
+
+	}
+
+	class Møterom extends Rom{
+		
+		int antall;
+
+		Møterom(int nummer, String navn, int antall){
+
+			super(nummer, navn);
+			this.antall = antall;
+		}
+
+		void skrivUt(){
+			
+			System.out.println(getNummer());
+			System.out.println(getNavn());
+			System.out.println(antall);
+		}
+
+	}	
+
+	class Kontor extends Rom{
+		
+		String navn;
+		
+		Møterom(int nummer, String navn, String navnn){
+
+			super(nummer, navn);
+			this.navn = navnn;
+		}
+		
+		void skrivUt(){
+			
+			System.out.println(getNummer());
+			System.out.println(getNavn());
+			System.out.println(navn);
+		}
+
+	}
+
+
+	public static main void(String [] args){
+
+		Møterom m = new Møterom();
+		Kontor k = new Kontor();
+
+		m.skrivUt();
+		k.skrivUt();
+	}
+
+
+g)
+
+	Det som endres i koden fra a) er at man skriver abstract foran klassenavnet (abstract class Rom), den vil da teoretisk og praktisk sett være en abstrakt klasse.
+	Måten man kan definere objekter på er annerledes i en abstract klasse subklassen av en abstrakt klasse følger oppsettet til den abstrakte klassen.

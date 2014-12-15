@@ -1,0 +1,246 @@
+Martin Anaton Robertsen
+StudNr: 146167
+Dato: 22.10.2014
+
+Oppgave 1
+
+	Utskrift blir "234"
+	Utskrift blir "54"
+	Utskrift blir "14"
+	Utskrift blir "1"
+	Utskrift blir "5.5" eller "5"
+	Utskrift blir "false"
+
+
+Oppgave 2
+
+	for (int i = 5; i > 0; i--){
+
+		System.out.println("5 * " + i + " = " + (5 * i));
+
+	}
+
+
+Oppgave 3
+
+	Den første do while løkken gjør ingenting siden variabel c aldri er større enn 5. 
+
+	Den neste while-løkken reduseren variabel c med 1 og skriver så ut verdien av den reduserte c som er 4 helt til c har blitt redusert til 0.
+
+	Til slutt så har du en utskriftslinje som skriver ut hvilken verdi c har, som er 0 pga. while-løkken.
+
+
+Oppgave 4a)
+	
+	public static int antallNegative(int[] tab){
+		int teller = 0;
+
+		for (elem : tab){
+			
+			if(elem < 0){
+			
+				teller++;
+
+			}
+
+		}
+		
+		return teller;
+	}
+
+Oppgave 4b)
+	
+	public static boolean erAlleLike(int[] tab){
+		boolean alleLik = true;
+
+		for (elem : tab){
+		
+			if (tab[0] != elem){
+
+				alleLik = false;
+
+			}
+		}
+		return alleLik;	
+	}
+
+Oppgave 4c)
+
+	public static void skriv(String[] tab){
+
+		for (elem : tab){
+
+			if (elem.length >= 3 && elem.length <= 5){
+
+				System.out.println(elem);
+
+			}
+
+		}
+
+	}
+
+Oppgave 5
+	
+	public class Student{
+		
+		private String navn;
+		private int studentNummer;
+		private boolean dataStudent;
+
+
+		Student(){
+
+			navn = "NN";
+			studentNummer = 0;
+			dataStudent = false;
+
+		}
+
+		Student(String navn, int studentNummer, boolean dataStudent){
+
+			this.navn = navn;
+			this.studentNummer = studentNummer;
+			this.dataStudent = dataStudent;
+			
+		}
+
+		public String getNavn(){
+
+			return navn;
+
+		}
+
+		public int getStudentNummer(){
+
+			return studentNummer;
+		
+		}
+
+		public boolean getDataStudent(){
+
+			return dataStudent;
+
+		}
+
+		public void skrivStudent(){
+
+			System.out.println("Navn: " + getNavn());
+			System.out.println("Studentnr: " + getStudentNummer());
+			System.out.print("Datastudent: ");
+			
+			if (getDataStudent()){
+				
+				System.out.println("ja");
+
+			} else{
+				
+				System.out.println("nei");
+
+			}
+
+		}
+
+	}
+
+Main-metoden for å bruke klassen Student:
+
+	public static void main(Strings[] args){
+
+		String navn1 = "Ole Olsen";
+		int studentNummer1 = 12345;
+		boolean dataStudent1 = false;
+
+		String navn2 = "Kari Nilsen";
+		int studentNummer2 = 12346;
+		boolean dataStudent2 = true;
+
+		Student s1 = new Student();
+		Student s2 = new Student(navn1, studentNummer1, dataStudent1);
+		Student s3 = new Student(navn2, studentNummer2, dataStudent2);
+
+		s1.skrivStudent();
+		s2.skrivStudent();
+		s3.skrivStudent();
+
+	}
+
+Oppgave 6
+
+	import easyIO.*;
+	
+	public class AndreGradsLikning{
+
+		public static void main(Strings[] args){
+
+			In tast = new In();
+			Out skjerm = new Out();
+			
+			int tilfelle1 = 0;
+			int tilfelle2 = 0;
+			int tilfelle3 = 0;
+
+			skjerm.out("Hvor mange likninger skal løses: ");
+			int antallLikninger = tast.inInt();
+
+			for (int i = 0; i < antallLikninger; i++){
+
+				skjerm.out("Skriv inn a-verdien: ");
+				double a = tast.inInt();
+				
+				skjerm.out("Skriv inn b-verdien: ");
+				double b = tast.inInt();
+
+				skjerm.out("Skriv inn c-verdien: ");
+				double c = tast.inInt();
+
+
+				int avhengighetsVerdi = ((b * b) - 4 * a * c;
+
+
+				if (avhengighetsverdi < 0){
+
+					skjerm.outln("Ligningen har ingen reele løsninger);
+
+					tilfelle1++;
+
+				} else if(avhengighetsverdi == 0){
+					
+					int x = -(b / (2 * A));
+
+					skjerm.out("Ligningen har en dobbelrot: " + x);	
+
+					tilfelle2++;
+				
+				} else{
+					
+					int x1 = ((-b + Math.sqrt(avhengighetsVerdi) / (2 * a));
+
+					int x2 = ((-b - Math.sqrt(avhengighetsVerdi) / (2 * a));
+
+					skjerm.outln("Ligningen har røttene x1 = " + x1 + " og x2 = " + x2);
+					
+					tilfelle3++;
+
+				}
+
+					
+			}
+
+			skjerm.outln();
+			skjerm.outln("Det var " + tilelle1 + " ligninger for tilfelle 1.");
+			skjerm.outln();
+			skjerm.outln("Det var " + tilelle2 + " ligninger for tilfelle 2.");
+			skjerm.outln();
+			skjerm.outln("Det var " + tilelle3 + " ligninger for tilfelle 3.");
+
+
+
+		}
+
+
+
+
+	}
+	
+	

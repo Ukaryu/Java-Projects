@@ -40,13 +40,13 @@ public class oppgave9 {
 
         sum -= (maks+min);
 
+        double poengsum = sum + lngdPoeng;
+
         skjerm.outln("Totale stilpoeng blir på: " + sum);
         skjerm.outln();
         skjerm.out("Totale lengdepoeng blir på ");
         skjerm.outln(lngdPoeng,2);
-
-
-
+        skjerm.outln("Samlet poengsum blir da: " + poengsum);
 
     }
 }

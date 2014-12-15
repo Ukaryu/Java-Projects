@@ -1,0 +1,19 @@
+a)
+    Forskjellen mellom array og HashMap er at array har en begrenset lengde og er sortert ved hjelp av en indeks.
+    HasHmap derimot bruker ikke noe slags type sortering og alt av objekt er lagret tilfeldig; i tillegg så har HashMap
+    lengde.
+
+b)
+    Forskjellen mellom array og ArrayList er at ArrayList har ubegrenset lengde når det kommer til innhold.
+
+c)
+    Forskjellen mellom HashMap og ArrayList er at ArrayList bruker indeks-sortering; derimot så gjør HashMap ikke det.
+    akronym = innfil.inWord();
+            akroArray [i] = innfil.inLine();
+            innfil.skipWhite();
+            while (!innfil.endOfFile()){
+                if (akronym.equals(innfil.inWord())){
+                    i++;
+                    akroArray [i] = innfil.inLine();
+                }
+            }
