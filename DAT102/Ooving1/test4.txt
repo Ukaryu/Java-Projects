@@ -1,0 +1,14 @@
+Serienummer: 0
+Artist: sadas
+Tittel: asda
+Lanseringsår: 2321
+Sjanger: Pop
+Plateselskap: sad
+
+Serienummer: 0
+Artist: 2323
+Tittel: sdas
+Lanseringsår: 213
+Sjanger: Klassisk
+Plateselskap: asdas
+

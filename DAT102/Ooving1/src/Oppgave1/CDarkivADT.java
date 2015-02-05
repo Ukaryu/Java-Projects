@@ -17,7 +17,7 @@ public interface CDarkivADT {
 
     public void sokArtist(String artist);
 
-    public void antallCD();
+    public int antallCD();
 
 
 }

@@ -1,0 +1,14 @@
+Serienummer: 0
+Artist: Rodsa
+Tittel: sda
+Lanseringsår: 121
+Sjanger: Pop
+Plateselskap: sdad
+
+Serienummer: 0
+Artist: sada
+Tittel: dassd
+Lanseringsår: 2
+Sjanger: Rock
+Plateselskap: sada
+

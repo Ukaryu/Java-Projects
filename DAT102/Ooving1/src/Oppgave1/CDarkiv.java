@@ -13,6 +13,8 @@ public class CDarkiv implements CDarkivADT {
 
     }
 
+
+
     @Override
     public void leggTil(CD element) {
         samling[antall] = element;
@@ -29,8 +31,8 @@ public class CDarkiv implements CDarkivADT {
                 }
                 if (samling[i].tittel.toUpperCase().equals(CD.toUpperCase())){
                     funnet = true;
+                    antall--;
                 }
-
             }
         } catch (NullPointerException e){
             System.out.println("Ikke utfylt array");
@@ -65,7 +67,7 @@ public class CDarkiv implements CDarkivADT {
     }
 
     @Override
-    public void antallCD() {
-
+    public int antallCD() {
+        return antall;
     }
 }
