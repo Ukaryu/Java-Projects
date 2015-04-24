@@ -1,0 +1,62 @@
+package no.hib.dat102.mengde.klient;
+import no.hib.dat102.mengde.adt.*;
+import no.hib.dat102.mengde.kjedet.KjedetMengde;
+import no.hib.dat102.mengde.tabell.TabellMengde;
+
+import java.util.Scanner;
+public class Ordliste {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		TabellMengde <String>ordListe1 = new TabellMengde<String>();
+	     
+	     String []ord = {"God","dag","Hans","Hansen","Hansaby","Olsen","Ole","buss","rute","Bergen"};
+	    	
+	     Scanner tastatur = new Scanner(System.in);
+	     //Legger til ordene i mengden ordListe1
+	     
+	     for(int i = 0; i < ord.length ; i++)
+	              ordListe1.leggTil(ord[i]);              
+	      	    
+	        TabellMengde<String>ordListe2 = new TabellMengde<String>();
+	        	        
+	        System.out.print("Oppgi en streng, avslutt med zzz :");
+	        String streng = tastatur.nextLine();
+	       //Leser inn ord 
+	        while(!streng.equals("zzz")){
+	              
+	         if(ordListe1.inneholder(streng)){
+	           System.out.println("ordListe1 inneholder " + streng);
+	          }else{         
+	             System.out.println("ordListe1 inneholder ikke " + streng);
+	                 
+	             }
+	             //Legger innleste ord inn i ordliste2
+	              ordListe2.leggTil(streng);  
+	            System.out.print("Oppgi en streng, avslutt med zzz :");
+	         streng = tastatur.nextLine();  
+	      
+	        }//while
+	              
+	                
+	         //Lager unionen av de to ordlistene
+	         TabellMengde <String>ordListeBegge = new TabellMengde<String>();
+	         
+	         ordListeBegge = (TabellMengde<String>)ordListe1.union(ordListe2);
+	                         
+	        System.out.println("Utskrift av ordListeBegge");
+	        String hentStreng = "";
+	         while(!ordListeBegge.erTom()){
+	          hentStreng = ordListeBegge.fjernTilfeldig();
+	          System.out.println(hentStreng);
+	          
+	         }
+	    
+	        
+
+	}
+
+}
