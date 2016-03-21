@@ -6,20 +6,23 @@ package SnakesLadders4;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class main extends JFrame{
+
 
     public main(){
         JPanel jp = new JPanel();
         JButton jb = new JButton();
         JTextField jtf= new JTextField(5);
 
-        jb.addActionListener(new Listener());
+
+
+        jb.addActionListener(new board());
+
         jb.setIcon(new ImageIcon("Rolling Button.png"));
         jb.setBackground(Color.black);
-        jb.setForeground(Color.black);
-        jp.add(jb);
-        jp.add(new board());
-
 
 
         jp.add(jb);

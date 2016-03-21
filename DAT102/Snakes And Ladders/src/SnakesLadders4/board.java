@@ -21,8 +21,10 @@ public class board extends JPanel implements ActionListener{
         private pieceMove pise;
         private Image snakes;
 
+        Dice d = new Dice(1,6);
+
         public board(){
-            addKeyListener(new TAdapter());
+            //addKeyListener(new TAdapter());
             setFocusable(true);
             setBackground(Color.black);
             setDoubleBuffered(true);
@@ -64,8 +66,9 @@ public class board extends JPanel implements ActionListener{
             g.dispose();
         }
 
+
         public void actionPerformed(ActionEvent e) {
-            pise.move();
+            pise.move(d.throwDice());
             repaint();
         }
 

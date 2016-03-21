@@ -1,8 +1,13 @@
 package SnakesLadders4;
 
-import javax.swing.*;
+
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
+import javax.swing.*;
 
 /**
  * Created by Martin on 24.04.2015.
@@ -28,9 +33,10 @@ public class pieceMove {
         y = 900;
     }
 
-    public void move(){
+    public void move(int roll){
         x += dx;
         y += dy;
+
     }
 
     public int getX(){
@@ -49,7 +55,7 @@ public class pieceMove {
 
         int key = e.getKeyCode();
 
-        if (key == KeyEvent.VK_LEFT){
+        if (key == KeyEvent.VK){
             dx = -1;
         }
 

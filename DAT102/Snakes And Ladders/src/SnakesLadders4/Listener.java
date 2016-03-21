@@ -1,5 +1,6 @@
 package SnakesLadders4;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,8 +10,19 @@ import java.awt.event.ActionListener;
 public class Listener implements ActionListener {
 
     Dice d = new Dice(1,6);
+    board b = new board();
+
+
+    JTextField tField;
+
+    public Listener(JTextField tField){
+        this.tField = tField;
+    }
 
     public void actionPerformed(ActionEvent e){
-        System.out.println(d.throwDice());
+        tField.setText(Integer.toString(d.throwDice()));
+
+
+
     }
 }
